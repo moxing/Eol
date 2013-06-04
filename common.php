@@ -8,5 +8,7 @@
 	$cfg->set_model_directory('models');
 	$cfg->set_connections(array('development' => 'mysql://root:@127.0.0.1/eol;charset=utf8'));
 
+	session_start();
+
 
 
