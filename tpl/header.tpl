@@ -9,21 +9,23 @@
 </head>
 <body>
   <div class="navbar">
-    <div class="navbar-inner">
-      <a class="brand">呦呦云课堂</a>
-      <ul class="nav">
-        <li><a href="index.php">首页</a></li>
-        <li><a href="#">精品课程</a></li>
-      </ul>
-      <ul class="nav pull-right">
-        {if $user}
-          <li><a href="">设置</a></li>
-          <li><a href="/logout.php">退出</a></li>
-        {else}
-          <li><a href="/login.php">登录</a></li>
-          <li><a href="/signup.php">注册</a></li>
-        {/if}
-      </ul>
+    <div class="navbar-inner navbar-static-top">
+    <div class="container">
+        <a class="brand">呦呦云课堂</a>
+        <ul class="nav">
+          <li><a href="index.php">首页</a></li>
+          <li><a href="#">精品课程</a></li>
+        </ul>
+        <ul class="nav pull-right">
+          {if $user}
+            <li><a href="">设置</a></li>
+            <li><a href="/logout.php">退出</a></li>
+          {else}
+            <li><a href="/login.php">登录</a></li>
+            <li><a href="/signup.php">注册</a></li>
+          {/if}
+        </ul>
+    </div>
     </div>
   </div>
   <div class="container">
