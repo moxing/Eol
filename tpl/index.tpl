@@ -1,6 +1,6 @@
 {include file="tpl/header.tpl"}
 <div class="row-fluid">
-	<div id="myCarousel" class="carousel slide span10 offset1">
+	<div id="myCarousel" class="carousel slide span9">
 	    <ol class="carousel-indicators">
 	      <li data-target="#myCarousel" data-slide-to="0" class=""></li>
 	      <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
@@ -32,6 +32,18 @@
 	    <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
 	    <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
     </div>
+    <div class="span3 well">
+		<h4>最新课程</h4>
+    	<ul class="nav nav-list">
+	    	<li class="nav-header">[2013-6-12]</li>
+	    	<li><a href="">中关村一小  三年级 语文 </a></li>
+	    	<li><a href="">中关村一小  二年级 数学 </a></li>
+	    	<li><a href="">五一小学    三年级 英语 </a></li>
+	    	<li class="nav-header">[2013-6-11]</li>
+	    	<li><a href="">北大附小  三年级 语文 </a></li>
+	    	<li><a href="">清华附小  三年级 语文 </a></li>
+    	</ul>
+    </div>
 </div>
 <div class="row-fluid">    
     <div class="span5 offset1 well">
@@ -53,10 +65,10 @@
     		<dt><a href="">清华附小</a></dt>
     		<dd>    	
 		        <div class="row-fluid">
-		          <div class="span3">Fluid 6</div>
-		          <div class="span3">Fluid 6</div>
-		          <div class="span3">Fluid 6</div>
-		          <div class="span3">Fluid 6</div>		          
+		          <div class="span3">一年级-语文</div>
+		          <div class="span3">一年级-数学 6</div>
+		          <div class="span3">二年级-英语</div>
+		          <div class="span3">五年级-数学</div>		          
 		        </div>		    	
     		</dd>
     	</dl>

@@ -1,4 +1,9 @@
 <?php
+	define('USER', 0);
+	define('AUSER', '1');
+	define('TEACHER', '2');
+	define('ADMIN', '3');
+
 	date_default_timezone_set("PRC");
 	require_once('lib/smarty/Smarty.class.php');
     $smarty = new Smarty();
