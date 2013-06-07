@@ -1,6 +1,6 @@
 {include file="tpl/header.tpl"}
 <div class="row-fluid">
-	<div id="myCarousel" class="carousel slide span9">
+	<div id="myCarousel" class="carousel slide span8">
 	    <ol class="carousel-indicators">
 	      <li data-target="#myCarousel" data-slide-to="0" class=""></li>
 	      <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
@@ -32,7 +32,7 @@
 	    <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
 	    <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
     </div>
-    <div class="span3 well">
+    <div class="span4 well">
 		<h4>最新课程</h4>
     	<ul class="nav nav-list">
 	    	<li class="nav-header">[2013-6-12]</li>
@@ -42,11 +42,12 @@
 	    	<li class="nav-header">[2013-6-11]</li>
 	    	<li><a href="">北大附小  三年级 语文 </a></li>
 	    	<li><a href="">清华附小  三年级 语文 </a></li>
+	    	<li><a href="">清华附小  三年级 语文 </a></li>
     	</ul>
     </div>
 </div>
 <div class="row-fluid">    
-    <div class="span5 offset1 well">
+    <div class="span4 well">
     	<h3>新闻</h3>
     	<dl>
     		<dt><a>外交人员随居子女数字学校启动[2013-06-03]</a></dt>
@@ -59,7 +60,7 @@
 		</dl>
 
     </div>
-    <div class="span5 well">
+    <div class="span4 well">
     	<h3>课程中心</h3>
     	<dl>
     		<dt><a href="">清华附小</a></dt>
@@ -91,6 +92,32 @@
     		</dd>
     	</dl>    	    	    	
     </div>
+    <div class="span4 well">
+    	<h3>名师推荐</h3>
+    	<dl>
+    		<dt><a href="">清华附小</a></dt>
+    		<dd>	    	
+    		</dd>
+    	</dl>
+    	<dl>
+    		<dt><a href="">北大附小</a></dt>
+    		<dd>    	
+		    	
+    		</dd>
+    	</dl>
+    	<dl>
+    		<dt><a href="">八一小学</a></dt>
+    		<dd>    	
+		    	
+    		</dd>
+    	</dl>
+    	<dl>
+    		<dt><a href="">首师大附小</a></dt>
+    		<dd>    	
+		    	
+    		</dd>
+    	</dl>    	    	    	
+    </div>    
 </div>
 <script type="text/javascript">
 $('#myCarousel').carousel({
