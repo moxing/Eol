@@ -1,53 +1,54 @@
 <?php
 	require_once('common.php');
 
-	if($_POST['submit']){
+	$GLOBALS['smarty']->assign('submit',time());
+	if( time()-intval($_POST['submit']) < 3600 ){
 		if($_POST['inputEmail']){
 			$email = $_POST['inputEmail'];
-			$smarty->assign('email',$email);
+			$GLOBALS['smarty']->assign('email',$email);
 			if(filter_var($email, FILTER_VALIDATE_EMAIL)==false){
-				$smarty->assign('signup_erro', '邮箱地址错误');
-				$smarty->display('tpl/signup.tpl');
+				$GLOBALS['smarty']->assign('signup_erro', '邮箱地址错误');
+				$GLOBALS['smarty']->display('tpl/signup.tpl');
 				exit;
 			}
 			if(User::find_by_email($email)){
-				$smarty->assign('signup_erro', '邮箱已被其他用户使用，请换一个新邮箱');
-				$smarty->display('tpl/signup.tpl');
+				$GLOBALS['smarty']->assign('signup_erro', '邮箱已被其他用户使用，请换一个新邮箱');
+				$GLOBALS['smarty']->display('tpl/signup.tpl');
 				exit;
 			}
 		}else{
-			$smarty->assign('signup_erro', '邮箱不能为空');
-			$smarty->display('tpl/signup.tpl');
+			$GLOBALS['smarty']->assign('signup_erro', '邮箱不能为空');
+			$GLOBALS['smarty']->display('tpl/signup.tpl');
 			exit;	
 		}
 
 		if($_POST['inputName']){
 			$name = $_POST['inputName'];
-			$smarty->assign('name',$name);
+			$GLOBALS['smarty']->assign('name',$name);
 			if(User::find_by_name($name)){
-				$smarty->assign('signup_erro', '用户名已被其他用户使用，请换一个新用户名');
-				$smarty->display('tpl/signup.tpl');
+				$GLOBALS['smarty']->assign('signup_erro', '用户名已被其他用户使用，请换一个新用户名');
+				$GLOBALS['smarty']->display('tpl/signup.tpl');
 				exit;
 			}
 		}else{
-			$smarty->assign('signup_erro', '用户名不能为空');
-			$smarty->display('tpl/signup.tpl');
+			$GLOBALS['smarty']->assign('signup_erro', '用户名不能为空');
+			$GLOBALS['smarty']->display('tpl/signup.tpl');
 			exit;
 		}
 
 
 		if($_POST['inputPassword']){
 			$password = $_POST['inputPassword'];
-			$smarty->assign('password',$password);
+			$GLOBALS['smarty']->assign('password',$password);
 		}else{
-			$smarty->assign('signup_erro', '密码不能为空');
-			$smarty->display('tpl/signup.tpl');
+			$GLOBALS['smarty']->assign('signup_erro', '密码不能为空');
+			$GLOBALS['smarty']->display('tpl/signup.tpl');
 			exit;		
 		}
 
 		if($_POST['inputCode']){
 			$code = $_POST['inputCode'];
-			$smarty->assign('code',$code);
+			$GLOBALS['smarty']->assign('code',$code);
 			$type = 1;
 		}else{
 			$type = 0;
@@ -68,7 +69,7 @@
 		}
 		header("Location: /u.php");		
 	}else{
-		$smarty->display('tpl/signup.tpl');
+		$GLOBALS['smarty']->display('tpl/signup.tpl');
 	}
 
 

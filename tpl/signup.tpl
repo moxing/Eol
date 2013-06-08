@@ -1,8 +1,8 @@
 {include file="tpl/header.tpl"}
 <div class="row">
-	<div class="well span6 offset3">
+	<div class="well span6 offset3 signup">
 	{if $signup_erro}
-	<div class="alert alert-error">
+	<div class="alert alert-error text-center">
   		{$signup_erro}
 	</div>
 	{/if}
@@ -33,6 +33,7 @@
 	  </div>	  
 	  <div class="control-group">
 	    <div class="controls">
+	      <input type="hidden" name="submit" value="{$submit}"/>
 	      <button type="submit" class="btn btn-primary">注册</button>
 	    </div>
 	  </div>

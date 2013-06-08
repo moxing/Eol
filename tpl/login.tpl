@@ -1,6 +1,6 @@
 {include file="tpl/header.tpl"}
 <div class="row">
-	<div class="well span6 offset3">
+	<div class="well span6 offset3 login">
 	{if $login_erro}
 	<div class="alert alert-error">
   		{$login_erro}

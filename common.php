@@ -6,8 +6,8 @@
 
 	date_default_timezone_set("PRC");
 	require_once('lib/smarty/Smarty.class.php');
-    $smarty = new Smarty();
-	
+    $GLOBALS['smarty'] = new Smarty();
+ 	
 	require_once('lib/activerecord/ActiveRecord.php');
 	$cfg = ActiveRecord\Config::instance();
 	$cfg->set_model_directory('models');
@@ -15,5 +15,10 @@
 
 	session_start();
 
-
+	function msg($msg,$type=0){
+		$GLOBALS;
+		$GLOBALS['smarty']->assign('message',$msg);
+		$GLOBALS['smarty']->display('tpl/msg.tpl');
+		exit;
+	}
 
