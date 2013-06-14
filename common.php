@@ -13,7 +13,16 @@
 	$cfg->set_model_directory('models');
 	$cfg->set_connections(array('development' => 'mysql://root:@127.0.0.1/eol;charset=utf8'));
 
-	session_start();
+	require_once('lib/PasswordHash.php');
+	$hasher = new PasswordHash(8, false);
+	
+	function get_post_var($var)
+	{
+		$val = $_POST[$var];
+		if (get_magic_quotes_gpc())
+			$val = stripslashes($val);
+		return $val;
+	}
 
 	function msg($msg,$type=0){
 		$GLOBALS;
