@@ -1,9 +1,4 @@
 <?php
-	define('USER', 0);
-	define('AUSER', '1');
-	define('TEACHER', '2');
-	define('ADMIN', '3');
-
 	date_default_timezone_set("PRC");
 	require_once('lib/smarty/Smarty.class.php');
     $GLOBALS['smarty'] = new Smarty();
@@ -16,6 +11,17 @@
 	require_once('lib/PasswordHash.php');
 	$hasher = new PasswordHash(8, false);
 	
+	define('USER', 0);
+	define('AUSER', '1');
+	define('TEACHER', '2');
+	define('ADMIN', '3');
+	session_start();
+
+	if (isset($_SESSION['current_user'])) {
+		$GLOBALS['smarty']->assign('user', $_SESSION['current_user']);	
+	}
+
+
 	function get_post_var($var)
 	{
 		$val = $_POST[$var];
@@ -29,5 +35,10 @@
 		$GLOBALS['smarty']->assign('message',$msg);
 		$GLOBALS['smarty']->display('tpl/msg.tpl');
 		exit;
+	}
+
+	function logout(){
+		$_SESSION;
+		unset($_SESSION['current_user']);
 	}
 

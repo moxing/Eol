@@ -18,8 +18,9 @@
         </ul>
         <ul class="nav pull-right">
           {if $user}
-            <li><a href="">设置</a></li>
-            <li><a href="/logout.php">退出</a></li>
+            <li><a href="/u.php"><i class="icon-user"></i>{$user.name}</a></li>
+            <li><a href=""><i class="icon-cog"></i>设置</a></li>
+            <li><a href="/logout.php"><i class="icon-off"></i>退出</a></li>
           {else}
             <li><a href="/login.php">登录</a></li>
             <li><a href="/signup.php">注册</a></li>
