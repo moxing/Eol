@@ -1,6 +1,6 @@
 <?php
 	require_once('common.php');
-	if (!isset($_SESSION['current_user'])) {
+	if ( identity() === false ) {
 		header('Location: /login.php');
 	}
 

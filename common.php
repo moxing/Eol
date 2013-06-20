@@ -12,9 +12,9 @@
 	$hasher = new PasswordHash(8, false);
 	
 	define('USER', 0);
-	define('AUSER', '1');
-	define('TEACHER', '2');
-	define('ADMIN', '3');
+	define('AUSER', 1);
+	define('TEACHER', 2);
+	define('ADMIN', 3);
 	session_start();
 
 	if (isset($_SESSION['current_user'])) {
@@ -39,6 +39,17 @@
 
 	function logout(){
 		$_SESSION;
+		$GLOBALS;
 		unset($_SESSION['current_user']);
+		$GLOBALS['smarty']->clearAssign('user');
 	}
 
+	function identity(){
+		$_SESSION;
+		if (isset($_SESSION['current_user'])) {
+			$user = $_SESSION['current_user'];
+			return $user['type'];
+		}else{
+			return false;
+		}
+	}
