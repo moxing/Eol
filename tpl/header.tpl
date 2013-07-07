@@ -4,6 +4,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="assets/javascript/all.js"></script>    
     <link href="assets/stylesheets/default.css" rel="stylesheet">
 	<title>呦呦云课堂{if $title}$title{/if}</title>
 </head>
