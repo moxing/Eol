@@ -1,16 +1,16 @@
 <div class="row-fluid">
-  <div class="span12 page-header">
+  <div class="span12">
     <a class="btn pull-right" data-toggle="modal" data-target="#teacherModal">新增教师</a>
   </div>
+    <table class="table span12">
+      <tr>
+        <th class="span2">#</th>
+        <th class="span3">姓名</th>
+        <th class="span4">学校</th>
+        <th class="span3">注册时间</th>
+      </tr>
+    </table>
 
-  <table class="table table-bordered table-hover span12">
-  <tr>
-    <th class="span2">#</th>
-    <th class="span3">姓名</th>
-    <th class="span4">学校</th>
-    <th class="span3">注册时间</th>
-  </tr>
-  </table>
 </div>
 
 <div id="teacherModal" class="modal hide fade">
@@ -42,6 +42,6 @@
   </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
-    <button class="btn btn-primary">增加</button>
+    <button class="btn btn-primary" id="add_teacher">增加</button>
   </div>
 </div>
