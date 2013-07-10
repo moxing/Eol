@@ -14,12 +14,8 @@ if( identity()!=ADMIN ){
 // 	$teacher = $new_user->create_teacher(array('ori_pwd'=>$pwd));
 // }
 
-if($_GET['do'] === 't'){
-
-}
-
-if($_POST['do'] === 'addteacher'){
-	
-}
-
+$teacher_list = Teacher::find('all',array('order'=>'updated_at DESC'));
+$GLOBALS['smarty']->assign('teacher_list', $teacher_list);
+$course_list = Course::find('all',array('order'=>'updated_at DESC'));
+$GLOBALS['smarty']->assign('course_list', $course_list);
 $GLOBALS['smarty']->display('tpl/a.tpl');

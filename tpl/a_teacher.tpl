@@ -1,28 +1,29 @@
 <div class="row-fluid">
   <div class="btn-group span12">
-    <a class="btn" data-toggle="modal" data-target="#teacherModal">新增教师</a>
-    <a class="btn" id="at">新增</a>
+    <a class="btn pull-right" data-toggle="modal" data-target="#teacherModal">新增教师</a>
   </div>
   
-  <table class="table span12">
+  <table class="table table-striped">
+    <thead>    
     <tr>
-      <th class="span1">#</th>
       <th class="span2">姓名</th>
       <th class="span2">初始密码</th>
-      <th class="span4">学校</th>
-      <th class="span2">注册时间</th>
+      <th class="span3">学校</th>
+      <th class="span3">注册时间</th>
+      <th class="span2">编辑</th>
     </tr>
-<!--     {foreach $teacher_list as $r} 
+    </thead>
+    <tbody>
+    {foreach $teacher_list as $r} 
       <tr>
-          <!-- <td>{$r@key}</td>
           <td>{$r->name}</td>
           <td>{$r->ori_pwd}</td>
           <td>{$r->school}</td>
-          <td>{$r->create_at}</td>
+          <td>{$r->created_at->format('Y-m-d H:i')}</td>
+          <td></td>
       </tr>
-    {foreachelse}
-      .. no results .. 
-    {/foreach} -->
+    {/foreach}
+    </tbody>
   </table>
 </div>
 
