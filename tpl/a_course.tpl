@@ -72,6 +72,7 @@
     $.post("ajax.php?do=course", { name: name ,teacher:teacher,desc:desc,op:'add'},
       function(data){
         if(data.id){
+          $('#a-content').load("ajax.php?do=course");
           $('#courseModal').modal('hide')
         }
       }, "json");

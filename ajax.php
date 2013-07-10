@@ -33,17 +33,24 @@
 		if( $do=='course'){
 			if($_POST['op']!=null && $_POST['op']==='add'){
 				$name=$_POST['name'];
-				$teach_id=$_POST['teacher'];
+				$teacher_id=$_POST['teacher'];
 				$desc=$_POST['desc'];
 				$new_course = new Course();
 				$new_course->name =$name;
 				$new_course->desc = $desc;
 				$new_course->type = TEACHER;
-				$new_course->save();			
+				$new_course->save();
+				$new_course_plan = new CoursePlan();
+				$new_course_plan->teacher_id = $teacher_id;
+				$new_course_plan->course_id = $new_course->id;
+				$new_course_plan->save();
+
 				echo $new_course->to_json();
 			}else{
 				$list = Teacher::find('all',array('order'=>'updated_at DESC'));
 				$GLOBALS['smarty']->assign('teacher_list', $list);
+				$course_list = Course::find('all',array('order'=>'updated_at DESC'));
+				$GLOBALS['smarty']->assign('course_list', $course_list);			
 				$GLOBALS['smarty']->display('tpl/a_course.tpl');
 			}	
 		}
