@@ -14,13 +14,19 @@
     <div class="container">
         <a class="brand">呦呦云课堂</a>
         <ul class="nav">
-          <li><a href="index.php">首页</a></li>
-          <li><a href="#">精品课程</a></li>
+          <li><a href="index.php">首页</a></li>    
+          <li><a href="u.php">课程</a></li>   
+          {if $user.type==3}
+          <li><a href="a.php">管理</a></li>
+          {/if}          
+          {if $user.type==2}
+          <li><a href="t.php">课程设置</a></li>
+          {/if}
         </ul>
         <ul class="nav pull-right">
           {if $user}
             <li><a href="/u.php"><i class="icon-user"></i>{$user.name}</a></li>
-            <li><a href=""><i class="icon-cog"></i>设置</a></li>
+            <li><a href="#"><i class="icon-cog"></i>设置</a></li>
             <li><a href="/logout.php"><i class="icon-off"></i>退出</a></li>
           {else}
             <li><a href="/login.php">登录</a></li>

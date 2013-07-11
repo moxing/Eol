@@ -1,8 +1,11 @@
 <?php
 	require_once('common.php');
-	$does = array('teacher','student','course');
+	$does = array('teacher','student','course','lesson');
 	$do = $_GET['do'];
-	if( in_array($do,$does) && identity()==ADMIN ){
+	if(in_array($do,$does)==false){
+		exit();
+	}
+	if( identity()==ADMIN ){
 		if( $do=='teacher'){
 			if($_POST['op']!=null && $_POST['op']==='add'){
 
@@ -53,5 +56,51 @@
 				$GLOBALS['smarty']->assign('course_list', $course_list);			
 				$GLOBALS['smarty']->display('tpl/a_course.tpl');
 			}	
+		}
+
+    }
+
+    if( identity()==TEACHER ){
+
+		if( $do=='lesson'){
+			$course_id = $_GET['cid'];
+			if($course_id){
+				$course = Course::find($course_id);
+				$user_id = $_SESSION['current_user']['id'];
+				$user = User::find($user_id);
+				$teacher = $user->teacher;
+				if(in_array($teacher,$course->teacher)){
+					if($_POST['op']==='add'){
+						$attr = array();
+
+						$name=$_POST['name'];
+						$pub_time=$_POST['pub_time'];
+						$desc=$_POST['desc'];
+
+						if($name){
+							$attr['name']=$name;
+						}
+						if($pub_time){
+							$attr['pub_time']=new ActiveRecord\DateTime($pub_time);
+						}
+						if($desc){
+							$attr['desc']=$desc;
+						}
+						$attr['teacher_id']=$teacher->id;
+						$lesson = $course->create_lesson($attr);
+						echo $lesson->to_json();
+					}else if($_POST['op']==='del'){
+						$id = $_POST['id'];
+						$lesson = Lesson::find($id);
+						$lesson->delete();
+						echo json_encode(array('result'=>'success'));
+					}else{
+						$list = $course->lesson;
+						$GLOBALS['smarty']->assign('lesson_list', $list);
+						$GLOBALS['smarty']->assign('cid', $course->id);
+						$GLOBALS['smarty']->display('tpl/a_lesson.tpl');
+					}
+				}
+			}
 		}
     }
