@@ -8,7 +8,7 @@
     <tr>
       <th class="span2">课程名</th>
       <th class="span2">课程说明</th>
-      <th class="span2">用户类型</th>
+      <th class="span2">任课教师</th>
       <th class="span2">注册时间</th>
       <th class="span2">编辑</th>
     </tr>
@@ -18,7 +18,7 @@
       <tr>
           <td>{$r->name}</td>
           <td>{$r->desc}</td>
-          <td></td>
+          <td>{$r->teacher[0]->name}</td>
           <td>{$r->created_at->format('Y-m-d H:i')}</td>
           <td><a class="btn course-del" data-url="{$r->id}">删除</a></td>
       </tr>
