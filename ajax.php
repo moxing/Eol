@@ -34,7 +34,7 @@
 			$GLOBALS['smarty']->display('tpl/a_student.tpl');			
 		}
 		if( $do=='course'){
-			if($_POST['op']!=null && $_POST['op']==='add'){
+			if( $_POST['op']==='add'){
 				$name=$_POST['name'];
 				$teacher_id=$_POST['teacher'];
 				$desc=$_POST['desc'];
@@ -49,6 +49,11 @@
 				$new_course_plan->save();
 
 				echo $new_course->to_json();
+			}else if( $_POST['op']==='del'){
+				$cid=$_POST['cid'];
+				$course = Course::find($cid);
+				$course->delete();
+				echo json_encode(array('result'=>'success'));
 			}else{
 				$list = Teacher::find('all',array('order'=>'updated_at DESC'));
 				$GLOBALS['smarty']->assign('teacher_list', $list);

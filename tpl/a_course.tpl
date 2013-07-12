@@ -20,7 +20,7 @@
           <td>{$r->desc}</td>
           <td></td>
           <td>{$r->created_at->format('Y-m-d H:i')}</td>
-          <td></td>
+          <td><a class="btn course-del" data-url="{$r->id}">删除</a></td>
       </tr>
     {/foreach}
     </tbody>
@@ -77,4 +77,12 @@
         }
       }, "json");
   });
+
+  $(".course-del").click(function(){
+    var id = $(this).attr('data-url');
+    $.post("ajax.php?do=course", { cid: id ,op:'del'},
+      function(data){
+        $('#t-content').load("ajax.php?do=course");
+      }, "json");    
+  });  
 </script>
