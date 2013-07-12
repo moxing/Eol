@@ -9,7 +9,7 @@
           </ul>
         </div>
         <div id="t-content" class="span10">
-          <!-- {include file="tpl/a_lesson.tpl"} -->
+          {include file="tpl/a_lesson.tpl"}
         </div>
   </div>
   <div class="span2">
