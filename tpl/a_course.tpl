@@ -82,7 +82,7 @@
     var id = $(this).attr('data-url');
     $.post("ajax.php?do=course", { cid: id ,op:'del'},
       function(data){
-        $('#t-content').load("ajax.php?do=course");
+        $('#a-content').load("ajax.php?do=course");
       }, "json");    
   });  
 </script>

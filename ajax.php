@@ -52,7 +52,10 @@
 			}else if( $_POST['op']==='del'){
 				$cid=$_POST['cid'];
 				$course = Course::find($cid);
+				$conditions = "course_id = {$course->id}";
+				$course_plan = CoursePlan::find('first',array('conditions' => $conditions ));
 				$course->delete();
+				$course_plan->delete();
 				echo json_encode(array('result'=>'success'));
 			}else{
 				$list = Teacher::find('all',array('order'=>'updated_at DESC'));
