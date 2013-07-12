@@ -10,5 +10,6 @@
 	$GLOBALS['smarty']->assign('course_list', $course_list);
 	if($course_list && $course_list[0]){
 		$GLOBALS['smarty']->assign('lesson_list', $course_list[0]->lesson);
+		$GLOBALS['smarty']->assign('cid', $course_list[0]->id);
 	}
 	$GLOBALS['smarty']->display('tpl/t.tpl');

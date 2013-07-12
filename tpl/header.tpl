@@ -20,7 +20,7 @@
           <li><a href="a.php">管理</a></li>
           {/if}          
           {if $user.type==2}
-          <li><a href="t.php">课程设置</a></li>
+          <li><a href="t.php">课时设置</a></li>
           {/if}
         </ul>
         <ul class="nav pull-right">
